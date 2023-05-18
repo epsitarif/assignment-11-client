@@ -1,6 +1,6 @@
 const Blogs = () => {
   return (
-    <div>
+    <div className="mt-10">
       <h2>
         Question-1: What is an access token and refresh token? How do they work
         and where should we store them on the client-side?
@@ -34,20 +34,10 @@ const Blogs = () => {
       </h3>
 
       <h2 className="mt-10">
-        Question-4: What is an access token and refresh token? How do they work
-        and where should we store them on the client-side?
+        Question-4: What is MongoDB aggregate and how does it work?
       </h2>
-      <h3 className="mt-5">
-        Answer-4: Access tokens are used in token-based authentication to allow
-        an application to access an API. And refresh token is a special token
-        that is used to obtain additional access tokens. Access tokens are used
-        in token-based authentication to allow an application to access an API.
-        The application receives an access token after a user successfully
-        authenticates and authorizes access, then passes the access token as a
-        credential when it calls the target API. A refresh token is a special
-        key that enables a client for an API or service to retrieve new access
-        tokens without requiring the user to perform a complete login. Store it
-        in a cookie in client side, it can be safer than local browser storage.
+      <h3 className="mt-5 mb-10">
+        Answer-4: MongoDB Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.
       </h3>
     </div>
   );
