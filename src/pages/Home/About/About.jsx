@@ -8,9 +8,10 @@ const About = () => {
         </div>
     <div className='lg:w-1/2 space-y-5 p-4'>
         <h3 className='text-3xl font-bold text-red-600'>About Our Toys</h3>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-outline btn-success">Get Started</button>
+      <h1 className="text-5xl font-bold">Toys House !!</h1>
+      <p className="py-6">Make your kids playtime more awesome with toys from our toys house. <br />
+Our toy house is enough to put a smile on your kids face.</p>
+      <button className="btn btn-outline btn-success">More Toys</button>
     </div>
   </div>
 </div>
