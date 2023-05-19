@@ -6,7 +6,7 @@ import gallery5 from "../../../assets/images/gallery/gallery5.jpg";
 import gallery6 from "../../../assets/images/gallery/gallery6.jpg";
 const Gallery = () => {
   return (
-    <div className="">
+    <div className="text-center font-bold mt-12"> <h1>Toys Gallery</h1>
       <div className="card bg-base-100 shadow-xl grid grid-cols-6 mx-auto m-5">
         <figure>
           <img className="w-96" src={gallery1} alt="Shoes" />
