@@ -48,7 +48,7 @@ const AllToys = () => {
                   <td>{toy.seller}</td>
                   <td>{toy.name}</td>
                   <td>{toy.subCategory}</td>
-                  <td><img className="h-12" src={toy.image} alt="" /></td>
+                  <td><img className="rounded w-24 h-24" src={toy.image} alt="" /></td>
                   <td>{toy.quantity}</td>
                   <td><Link to={`/view/${toy._id}`} className="btn btn-accent">View Details</Link></td>
                 </tr>

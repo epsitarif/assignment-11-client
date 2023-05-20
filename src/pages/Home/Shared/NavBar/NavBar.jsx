@@ -24,13 +24,17 @@ const NavBar = () => {
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
+      
+      { user?<>
       <li>
         <Link to="/addToys">Add Toys</Link>
       </li>
       <li>
         <Link to="/myToys">My Toys</Link>
       </li>
-      { user?.email ? <li><button onClick={handleLogOut}>Log Out</button></li> 
+      <li><img src={user.photoUrl} alt="" /></li>
+      <li><button onClick={handleLogOut}>Log Out</button></li> 
+      </>
       : <li>
         <Link to="/login">Login</Link>
       </li>
