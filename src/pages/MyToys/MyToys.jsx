@@ -11,12 +11,8 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToy(data));
-    }, []);
+    }, [url]);
 
-    app.put('/toys/:id', async(req, res) => {
-        const updatedToy = req.body;
-        
-    })
 
     const handleDelete = id => {
         const proceed = confirm('Are you want to delete the toy?');
@@ -34,6 +30,28 @@ const MyToys = () => {
                 }
             })
         }
+    }
+
+    const handleConfirm = id => {
+        fetch(`http://localhost:5000/toys/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({status: 'confirm'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0) {
+
+                const remaining = toy.filter(toy => toy._id !== id);
+                const updated = toy.find(toy => toy._id === id);
+                updated.status = 'confirm'
+                const newToy = [updated, ...remaining];
+                setToy(newToy);
+            }
+        })
     }
 
     return (
@@ -64,6 +82,7 @@ const MyToys = () => {
         key={toy._id}
         toy={toy}
         handleDelete={handleDelete}
+        handleConfirm={handleConfirm}
         ></MyToysRow>)
       }
     </tbody>

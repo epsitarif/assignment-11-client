@@ -9,6 +9,7 @@ import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import AddToys from "../pages/AddToys/AddToys";
 import MyToys from "../pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Error from "../pages/Error/Error";
 
 const router = createBrowserRouter([
     {
