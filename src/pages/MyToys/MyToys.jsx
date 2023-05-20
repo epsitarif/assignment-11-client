@@ -13,6 +13,11 @@ const MyToys = () => {
             .then(data => setToy(data));
     }, []);
 
+    app.put('/toys/:id', async(req, res) => {
+        const updatedToy = req.body;
+        
+    })
+
     const handleDelete = id => {
         const proceed = confirm('Are you want to delete the toy?');
         if(proceed){
