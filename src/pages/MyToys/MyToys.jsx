@@ -11,7 +11,25 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToy(data));
-    }, [])
+    }, []);
+
+    const handleDelete = id => {
+        const proceed = confirm('Are you want to delete the toy?');
+        if(proceed){
+            fetch(`http://localhost:5000/toys/${id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('deleted successfully')
+                    const remaining = toy.filter(toy => toy._id !==id)
+                    setToy(remaining);
+                }
+            })
+        }
+    }
 
     return (
         <div>
@@ -22,11 +40,9 @@ const MyToys = () => {
     <thead>
       <tr>
         <th>
-          <label>
-            <input type="checkbox" className="checkbox" />
-          </label>
+          
         </th>
-        <th>Image</th>
+        <th>Toys</th>
         <th>Name</th>
         <th>Price</th>
         <th>Ouantity</th>
@@ -42,6 +58,7 @@ const MyToys = () => {
         toy.map(toy => <MyToysRow
         key={toy._id}
         toy={toy}
+        handleDelete={handleDelete}
         ></MyToysRow>)
       }
     </tbody>
