@@ -12,47 +12,61 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Error from "../pages/Error/Error";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      errorElement: <Error></Error>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: 'blogs',
-            element: <Blogs></Blogs>
-        },
-        {
-            path: 'login',
-            element: <Login></Login>
-        },
-        {
-            path: 'signup',
-            element: <SignUp></SignUp>
-        },
-        {
-            path: 'allToys',
-            element: <AllToys></AllToys>
-        },
-        {
-            path: 'view/:id',
-            element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
-        },
-        {
-            path: 'addToys',
-            element: <PrivateRoute><AddToys></AddToys></PrivateRoute>
-        },
-        {
-            path: 'myToys',
-            element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "allToys",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "view/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-11-server-indol-eta.vercel.app/toys/${params.id}`
+          ),
+      },
+      {
+        path: "addToys",
+        element: (
+          <PrivateRoute>
+            <AddToys></AddToys>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "myToys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+]);
 
-
-  export default router;
+export default router;

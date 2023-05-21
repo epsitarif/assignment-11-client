@@ -1,44 +1,53 @@
 import Swal from "sweetalert2";
 
 const AddToys = () => {
-    const handleAddToys = event => {
-        event.preventDefault();
+  const handleAddToys = (event) => {
+    event.preventDefault();
 
-        const form = event.target;
-        const photo = form.photo.value;
-        const name = form.name.value;
-        const seller = form.seller.value;
-        const email = form.email.value;
-        const category = form.category.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
-        const details = form.details.value;
+    const form = event.target;
+    const photo = form.photo.value;
+    const name = form.name.value;
+    const seller = form.seller.value;
+    const email = form.email.value;
+    const category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
 
-        const newToys = {photo, name, seller, email, category, price, rating, quantity, details}
-        console.log(newToys);
+    const newToys = {
+      photo,
+      name,
+      seller,
+      email,
+      category,
+      price,
+      rating,
+      quantity,
+      details,
+    };
+    console.log(newToys);
 
-        fetch('http://localhost:5000/toys', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newToys)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Toy Added Successfully!',
-                    icon: 'success',
-                    confirmButtonText: 'OK',
-                })
-            }
-        })
-    }
-
+    fetch("https://assignment-11-server-indol-eta.vercel.app/toys", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newToys),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Toy Added Successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+  };
 
   return (
     <div className="bg-[#F4F3F0] p-20">
@@ -51,7 +60,6 @@ const AddToys = () => {
               <span className="label-text">Photo URL</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="photo"
@@ -65,7 +73,6 @@ const AddToys = () => {
               <span className="label-text">Name</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="name"
@@ -82,7 +89,6 @@ const AddToys = () => {
               <span className="label-text">Seller Name</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="seller"
@@ -96,7 +102,6 @@ const AddToys = () => {
               <span className="label-text">Seller Email</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="email"
@@ -113,7 +118,6 @@ const AddToys = () => {
               <span className="label-text">Sub Category</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="category"
@@ -127,7 +131,6 @@ const AddToys = () => {
               <span className="label-text">Price</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="price"
@@ -144,7 +147,6 @@ const AddToys = () => {
               <span className="label-text">Rating</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="rating"
@@ -158,7 +160,6 @@ const AddToys = () => {
               <span className="label-text">Available Quantity</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="quantity"
@@ -175,7 +176,6 @@ const AddToys = () => {
               <span className="label-text">Details and Description</span>
             </label>
             <label className="input-group">
-                
               <input
                 type="text"
                 name="details"
@@ -185,7 +185,7 @@ const AddToys = () => {
             </label>
           </div>
         </div>
-        <input type="submit" value="Add Toys" className="btn btn-block"/>
+        <input type="submit" value="Add Toys" className="btn btn-block" />
       </form>
     </div>
   );
