@@ -1,4 +1,4 @@
-/*  import React from "react";
+  import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 const ShopByCategory = () => {
@@ -69,4 +69,4 @@ const ShopByCategory = () => {
   );
 };
 
-export default ShopByCategory;   */
+export default ShopByCategory;   
