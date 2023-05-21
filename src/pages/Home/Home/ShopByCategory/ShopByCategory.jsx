@@ -1,4 +1,4 @@
- import React from "react";
+/*  import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 const ShopByCategory = () => {
@@ -15,16 +15,16 @@ const ShopByCategory = () => {
   return (
     <Tabs>
       <TabList className="flex">
-        {categories.map((category, index) => (
+        {toys.map((toys, index) => (
           <Tab key={index} className="p-4 cursor-pointer">
-            {category.name}
+            {toys.name}
           </Tab>
         ))}
       </TabList>
 
-      {categories.map((category, index) => (
-        <TabPanel key={index}>
-          <h2 className="text-2xl font-bold mb-4">{category.name}</h2>
+      {toys.map((toys, index) => (
+        <TabPanel key={toys}>
+          <h2 className="text-2xl font-bold mb-4">{toys.name}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {category.products.map((product, index) => (
               <div className="grid grid-cols-2 gap-5">
@@ -69,4 +69,4 @@ const ShopByCategory = () => {
   );
 };
 
-export default ShopByCategory;  
+export default ShopByCategory;   */

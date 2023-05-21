@@ -9,7 +9,6 @@ const Home = () => {
         <div className="mx-12">
             <Banner></Banner>
             <Gallery></Gallery>
-            
             <About></About>
             <Contact></Contact>
         </div>

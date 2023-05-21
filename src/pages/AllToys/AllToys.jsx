@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
 import { Link } from "react-router-dom";
+import { key } from "localforage";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -20,6 +21,15 @@ const AllToys = () => {
           life! <br /> Discover a treasure trove of toys that will ignite the
           imagination of children and bring smiles to their faces.
         </p>
+        {/* search */}
+        <div className="form-control ml-80 mb-6 mt-6">
+  <label className="label">
+  </label>
+  <label className="input-group">
+    <input type="text" placeholder="search your toy" className="input input-bordered" />
+    <button className="btn btn-primary"> Search</button>
+  </label>
+</div>
       </div>
       <div>
         {/* {
@@ -42,8 +52,9 @@ const AllToys = () => {
               </tr>
             </thead>
             <tbody>
-              {toys.map((toy, index) => (
+              {toys.map((toy, index) => ( 
                 <tr>
+                  
                   <th>{index+1}</th>
                   <td>{toy.seller}</td>
                   <td>{toy.name}</td>
@@ -60,5 +71,7 @@ const AllToys = () => {
     </div>
   );
 };
+
+document.getElementById('btn')
 
 export default AllToys;
