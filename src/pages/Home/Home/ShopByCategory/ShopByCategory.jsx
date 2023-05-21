@@ -1,48 +1,17 @@
-/* import React from "react";
+ import React from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
- import gallery1 from ".."; 
-import img2 from '../../assets/gallary/horse Toys.webp' 
 
 const ShopByCategory = () => {
-  const categories = [
-    {
-      name: "teddy bear toys",
-      products: [
-        {
-          name: "teddy bear Toys",
-          price: "$19.99",
-          rating: 4.5,
-          image: "math_toy1.jpg",
-        },
-       
-      ],
-    },
-    {
-      name: "horse Toys",
-      products: [
-        {
-          name: "horse Toys",
-          price: "$24.99",
-          rating: 4.2,
-          image: "language_toy1.jpg",
-        },
-        
-      ],
-    },
-    {
-      name: "dinosaur Toys",
-      products: [
-        {
-          name: "dinosaur Toys",
-          price: "$29.99",
-          rating: 4.8,
-          image: "engineering_toy1.jpg",
-        },
-        
-      ],
-    },
-  ];
-
+  
+    const AllToys = () => {
+        const [toys, setToys] = useState([]);
+      
+        useEffect(() => {
+          fetch("http://localhost:5000/toys")
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+        }, []);
+    }
   return (
     <Tabs>
       <TabList className="flex">
@@ -100,4 +69,4 @@ const ShopByCategory = () => {
   );
 };
 
-export default ShopByCategory; */
+export default ShopByCategory;  
